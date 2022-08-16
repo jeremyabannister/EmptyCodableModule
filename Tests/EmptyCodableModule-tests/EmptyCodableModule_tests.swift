@@ -18,6 +18,18 @@ final class EmptyCodable_tests: XCTestCase {
     }
     
     ///
+    func test_Codable_conformance () {
+        func proof <T: Codable> (_ t: T.Type) { }
+        proof(EmptyCodable.self)
+    }
+    
+    ///
+    func test_Hashable_conformance () {
+        func proof <T: Hashable> (_ t: T.Type) { }
+        proof(EmptyCodable.self)
+    }
+    
+    ///
     func test_encoding () throws {
         if try JSONEncoder().encode(EmptyCodable()) != "{}".data(using: .utf8)! {
             XCTFail()

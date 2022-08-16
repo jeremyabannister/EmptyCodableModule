@@ -6,7 +6,8 @@
 //
 
 ///
-public struct EmptyCodable: Codable {
+public struct EmptyCodable: Codable,
+                            Hashable {
     
     ///
     public init () { }
