@@ -40,5 +40,10 @@ final class EmptyCodable_tests: XCTestCase {
     func test_decoding () throws {
         _ = try JSONDecoder().decode(EmptyCodable.self, from: "{}".data(using: .utf8)!)
     }
+    
+    ///
+    func test_jsonData () throws {
+        XCTAssertEqual(EmptyCodable.jsonData, "{}".data(using: .utf8)!)
+    }
 }
 

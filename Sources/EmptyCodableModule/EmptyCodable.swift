@@ -6,9 +6,19 @@
 //
 
 ///
+@_exported import Foundation
+
+///
 public struct EmptyCodable: Codable,
                             Hashable {
     
     ///
     public init () { }
+}
+
+///
+extension EmptyCodable {
+    
+    ///
+    public static let jsonData: Data = "{}".data(using: .utf8)!
 }
