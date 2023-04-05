@@ -38,7 +38,20 @@ final class EmptyCodable_tests: XCTestCase {
     
     ///
     func test_decoding () throws {
+        
+        ///
         _ = try JSONDecoder().decode(EmptyCodable.self, from: "{}".data(using: .utf8)!)
+        
+        ///
+        do {
+            
+            ///
+            _ = try JSONDecoder().decode(EmptyCodable.self, from: "{\"foo\":7}".data(using: .utf8)!)
+            
+            ///
+            XCTFail()
+            
+        } catch { }
     }
     
     ///
