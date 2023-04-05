@@ -52,8 +52,8 @@ public struct EmptyCodable:
         var stringValue: String { "" }
         
         ///
-        init?(intValue: Int) { }
-        init?(stringValue: String) { }
+        init? (intValue: Int) { }
+        init? (stringValue: String) { }
     }
 }
 
