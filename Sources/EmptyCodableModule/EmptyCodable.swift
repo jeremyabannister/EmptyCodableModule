@@ -48,20 +48,12 @@ public struct EmptyCodable:
     private struct AnyCodingKey: CodingKey {
         
         ///
-        let intValue: Int?
-        let stringValue: String
+        var intValue: Int? { nil }
+        var stringValue: String { "" }
         
         ///
-        init?(intValue: Int) {
-            self.intValue = intValue
-            stringValue = "\(intValue)"
-        }
-        
-        ///
-        init?(stringValue: String) {
-            intValue = Int(stringValue)
-            self.stringValue = stringValue
-        }
+        init?(intValue: Int) { }
+        init?(stringValue: String) { }
     }
 }
 
